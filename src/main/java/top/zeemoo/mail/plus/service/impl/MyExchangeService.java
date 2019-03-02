@@ -151,6 +151,7 @@ public class MyExchangeService implements IMailService {
             } else {
                 service.autodiscoverUrl(mailConnCfg.getEmail());
             }
+            mailConnCfg.setHost(service.getUrl().getHost());
             return MailConn.builder().exchangeService(service).build();
         } catch (Exception e) {
             e.printStackTrace();
