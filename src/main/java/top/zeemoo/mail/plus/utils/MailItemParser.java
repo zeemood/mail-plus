@@ -110,7 +110,7 @@ public class MailItemParser {
     public static String saveMimiMessageAsLocalEml(MimeMessage mimeMessage, String targetDir) throws MailPlusException {
         try {
             String subject = mimeMessage.getSubject();
-            subject=StringUtils.isEmpty(subject)?"无主题"+System.currentTimeMillis():subject;
+            subject = StringUtils.isEmpty(subject) ? "无主题" + System.currentTimeMillis() : subject;
             File file = new File(targetDir.concat("/")
                     .concat(mimeMessage.getSession() == null ? RandomStringUtils.random(40, true, true) : DigestUtils.md5Hex(subject))
                     .concat(EML_SUFFIX));
@@ -219,10 +219,10 @@ public class MailItemParser {
             String subject = parser.getSubject();
             String body = parser.hasHtmlContent() ? parser.getHtmlContent() : parser.getPlainContent();
             UniversalMail universalMail = UniversalMail.builder()
-                    .content(StringUtils.isEmpty(body)?"":EmojiParser.parseToAliases(body))
+                    .content(StringUtils.isEmpty(body) ? "" : EmojiParser.parseToAliases(body))
                     .uid(uid)
                     .receiver(getMimeMessageAddressJson(parser.getTo()))
-                    .title(StringUtils.isEmpty(subject)?"<无主题>":EmojiParser.parseToAliases(subject))
+                    .title(StringUtils.isEmpty(subject) ? "<无主题>" : EmojiParser.parseToAliases(subject))
                     .sendDate(mimeMessage.getSentDate())
                     .hasRead(mimeMessage.getFlags().equals(Flags.Flag.SEEN))
                     .hasAttachment(parser.hasAttachments())
@@ -273,7 +273,7 @@ public class MailItemParser {
             }
             exchangeMessage.load();
             String subject = exchangeMessage.getSubject();
-            subject = StringUtils.isEmpty(subject)?"<无主题>"+System.currentTimeMillis():subject;
+            subject = StringUtils.isEmpty(subject) ? "<无主题>" + System.currentTimeMillis() : subject;
             File eml = new File(targetDir.concat("/").concat(DigestUtils.md5Hex(subject).concat(EML_SUFFIX)));
             exchangeMessage.load(
                     new PropertySet(
@@ -283,7 +283,7 @@ public class MailItemParser {
             );
             if (!eml.exists()) {
                 File parentFile = eml.getParentFile();
-                if(!parentFile.exists()){
+                if (!parentFile.exists()) {
                     parentFile.mkdirs();
                 }
                 eml.createNewFile();
@@ -354,18 +354,24 @@ public class MailItemParser {
             String subject = message.getSubject();
             EmailAddress from = message.getFrom();
             String body = message.getBody().toString();
+            Date dateTimeSent = null;
+            try {
+                dateTimeSent = message.getDateTimeSent();
+            } catch (ServiceLocalException e) {
+                e.printStackTrace();
+            }
             UniversalMail.UniversalMailBuilder builder = UniversalMail.builder()
                     .bcc(getExchangeAddressJson(message.getBccRecipients()))
                     .cc(getExchangeAddressJson(message.getCcRecipients()))
                     .folder(Folder.bind(message.getService(), message.getParentFolderId()).getDisplayName())
-                    .fromer(from==null?"<无发件人>":from.getAddress())
+                    .fromer(from == null ? "<无发件人>" : from.getAddress())
                     .hasAttachment(message.getHasAttachments())
                     .hasRead(message.getIsRead())
-                    .sendDate(message.getDateTimeSent())
+                    .sendDate(dateTimeSent)
                     //处理emoji
-                    .title(StringUtils.isAnyEmpty(message.getSubject())?"<无主题>":EmojiParser.parseToAliases(subject))
+                    .title(StringUtils.isAnyEmpty(message.getSubject()) ? "<无主题>" : EmojiParser.parseToAliases(subject))
                     .receiver(getExchangeAddressJson(message.getToRecipients())).uid(message.getId().getUniqueId())
-                    .content(StringUtils.isEmpty(body)?"":EmojiParser.parseToAliases(body));
+                    .content(StringUtils.isEmpty(body) ? "" : EmojiParser.parseToAliases(body));
             UniversalMail universalMail = builder.build();
             return universalMail;
         } catch (ServiceLocalException e) {
