@@ -22,6 +22,6 @@
 <dependency>
     <groupId>com.github.zeemood</groupId>
     <artifactId>mail-plus</artifactId>
-    <version>1.1</version>
+    <version>1.0.1</version>
 </dependency>
 ```
