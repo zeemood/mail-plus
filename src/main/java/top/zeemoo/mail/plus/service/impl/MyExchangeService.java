@@ -80,13 +80,20 @@ public class MyExchangeService implements IMailService {
                                 || displayName.equals("文件")
                                 || displayName.equals("檔案")
                                 || displayName.equals("記事")
+                                || displayName.startsWith("Conservation")
                         ) {
                     continue;
                 }
                 if (folder.getTotalCount() > 0) {
                     ItemView itemView = new ItemView(folder.getTotalCount());
                     itemView.getOrderBy().add(ItemSchema.DateTimeReceived, SortDirection.Descending);
-                    FindItemsResults<Item> items = exchangeService.findItems(folder.getId(), itemView);
+                    FindItemsResults<Item> items = null;
+                    try {
+                        items = exchangeService.findItems(folder.getId(), itemView);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        continue;
+                    }
                     ArrayList<Item> itemList = items.getItems();
                     for (Item item :
                             itemList) {
