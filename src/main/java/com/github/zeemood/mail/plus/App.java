@@ -1,4 +1,4 @@
-package top.zeemoo.mail.plus;
+package com.github.zeemood.mail.plus;
 
 /**
  * Hello world!

@@ -1,4 +1,4 @@
-package top.zeemoo.mail.plus.enums;
+package com.github.zeemood.mail.plus.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,10 +1,10 @@
-package top.zeemoo.mail.plus.domain;
+package com.github.zeemood.mail.plus.domain;
 
+import com.github.zeemood.mail.plus.enums.ProxyTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import top.zeemoo.mail.plus.enums.ProxyTypeEnum;
 
 /**
  * 邮箱登录配置

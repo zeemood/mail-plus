@@ -1,4 +1,4 @@
-package top.zeemoo.mail.plus.domain;
+package com.github.zeemood.mail.plus.domain;
 
 import com.sun.mail.imap.IMAPStore;
 import com.sun.mail.pop3.POP3Store;

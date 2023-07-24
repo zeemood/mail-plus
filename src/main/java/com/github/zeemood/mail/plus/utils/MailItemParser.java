@@ -1,6 +1,9 @@
-package top.zeemoo.mail.plus.utils;
+package com.github.zeemood.mail.plus.utils;
 
 import com.alibaba.fastjson.JSON;
+import com.github.zeemood.mail.plus.domain.UniversalAttachment;
+import com.github.zeemood.mail.plus.domain.UniversalRecipient;
+import com.github.zeemood.mail.plus.service.exception.MailPlusException;
 import com.sun.mail.imap.IMAPFolder;
 import com.sun.mail.imap.IMAPMessage;
 import com.sun.mail.pop3.POP3Folder;
@@ -19,11 +22,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.mail.util.MimeMessageParser;
-import top.zeemoo.mail.plus.domain.MailItem;
-import top.zeemoo.mail.plus.domain.UniversalAttachment;
-import top.zeemoo.mail.plus.domain.UniversalMail;
-import top.zeemoo.mail.plus.domain.UniversalRecipient;
-import top.zeemoo.mail.plus.service.exception.MailPlusException;
+import com.github.zeemood.mail.plus.domain.MailItem;
+import com.github.zeemood.mail.plus.domain.UniversalMail;
 
 import javax.activation.DataSource;
 import javax.mail.Address;

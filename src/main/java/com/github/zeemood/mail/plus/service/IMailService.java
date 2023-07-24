@@ -1,10 +1,10 @@
-package top.zeemoo.mail.plus.service;
+package com.github.zeemood.mail.plus.service;
 
-import top.zeemoo.mail.plus.domain.MailConn;
-import top.zeemoo.mail.plus.domain.MailConnCfg;
-import top.zeemoo.mail.plus.domain.MailItem;
-import top.zeemoo.mail.plus.domain.UniversalMail;
-import top.zeemoo.mail.plus.service.exception.MailPlusException;
+import com.github.zeemood.mail.plus.domain.MailConn;
+import com.github.zeemood.mail.plus.domain.MailConnCfg;
+import com.github.zeemood.mail.plus.domain.MailItem;
+import com.github.zeemood.mail.plus.domain.UniversalMail;
+import com.github.zeemood.mail.plus.service.exception.MailPlusException;
 
 import java.util.List;
 

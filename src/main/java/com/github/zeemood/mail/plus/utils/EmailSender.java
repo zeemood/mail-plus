@@ -1,9 +1,9 @@
-package top.zeemoo.mail.plus.utils;
+package com.github.zeemood.mail.plus.utils;
 
+import com.github.zeemood.mail.plus.service.exception.MailPlusException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
-import top.zeemoo.mail.plus.service.exception.MailPlusException;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;

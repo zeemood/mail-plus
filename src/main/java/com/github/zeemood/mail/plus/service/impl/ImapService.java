@@ -1,16 +1,16 @@
-package top.zeemoo.mail.plus.service.impl;
+package com.github.zeemood.mail.plus.service.impl;
 
+import com.github.zeemood.mail.plus.service.IMailService;
+import com.github.zeemood.mail.plus.service.exception.MailPlusException;
 import com.sun.mail.imap.IMAPFolder;
 import com.sun.mail.imap.IMAPMessage;
 import com.sun.mail.imap.IMAPStore;
-import top.zeemoo.mail.plus.domain.MailConn;
-import top.zeemoo.mail.plus.domain.MailConnCfg;
-import top.zeemoo.mail.plus.domain.MailItem;
-import top.zeemoo.mail.plus.domain.UniversalMail;
-import top.zeemoo.mail.plus.enums.ProxyTypeEnum;
-import top.zeemoo.mail.plus.service.IMailService;
-import top.zeemoo.mail.plus.service.exception.MailPlusException;
-import top.zeemoo.mail.plus.utils.MailItemParser;
+import com.github.zeemood.mail.plus.domain.MailConn;
+import com.github.zeemood.mail.plus.domain.MailConnCfg;
+import com.github.zeemood.mail.plus.domain.MailItem;
+import com.github.zeemood.mail.plus.domain.UniversalMail;
+import com.github.zeemood.mail.plus.enums.ProxyTypeEnum;
+import com.github.zeemood.mail.plus.utils.MailItemParser;
 
 import javax.mail.*;
 import java.util.ArrayList;

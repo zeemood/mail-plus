@@ -1,4 +1,4 @@
-package top.zeemoo.mail.plus.service.exception;
+package com.github.zeemood.mail.plus.service.exception;
 
 import lombok.NoArgsConstructor;
 

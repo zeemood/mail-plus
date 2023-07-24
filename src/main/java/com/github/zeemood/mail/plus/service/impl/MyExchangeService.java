@@ -1,5 +1,7 @@
-package top.zeemoo.mail.plus.service.impl;
+package com.github.zeemood.mail.plus.service.impl;
 
+import com.github.zeemood.mail.plus.service.IMailService;
+import com.github.zeemood.mail.plus.service.exception.MailPlusException;
 import microsoft.exchange.webservices.data.core.ExchangeService;
 import microsoft.exchange.webservices.data.core.WebProxy;
 import microsoft.exchange.webservices.data.core.enumeration.property.WellKnownFolderName;
@@ -14,13 +16,11 @@ import microsoft.exchange.webservices.data.search.FindFoldersResults;
 import microsoft.exchange.webservices.data.search.FindItemsResults;
 import microsoft.exchange.webservices.data.search.FolderView;
 import microsoft.exchange.webservices.data.search.ItemView;
-import top.zeemoo.mail.plus.domain.MailConn;
-import top.zeemoo.mail.plus.domain.MailConnCfg;
-import top.zeemoo.mail.plus.domain.MailItem;
-import top.zeemoo.mail.plus.domain.UniversalMail;
-import top.zeemoo.mail.plus.service.IMailService;
-import top.zeemoo.mail.plus.service.exception.MailPlusException;
-import top.zeemoo.mail.plus.utils.MailItemParser;
+import com.github.zeemood.mail.plus.domain.MailConn;
+import com.github.zeemood.mail.plus.domain.MailConnCfg;
+import com.github.zeemood.mail.plus.domain.MailItem;
+import com.github.zeemood.mail.plus.domain.UniversalMail;
+import com.github.zeemood.mail.plus.utils.MailItemParser;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package top.zeemoo.mail.plus.domain;
+package com.github.zeemood.mail.plus.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
